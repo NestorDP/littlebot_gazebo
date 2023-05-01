@@ -34,7 +34,7 @@ def generate_launch_description():
             " ",
             "prefix:=''",
             " ",
-            "is_sim:=true",
+            "use_sim:=true",
             " ",
             "gazebo_controllers:=",
             config_littlebot_velocity_controller,
