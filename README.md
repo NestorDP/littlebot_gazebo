@@ -77,7 +77,7 @@ To install the Littlebot Gazebo package, follow these steps:
   # To check if the package is listed in your ROS packages
   ros2 pkg list | grep littlebot*
   ```
-  If the package is listed, you have successfully installed the Littlebot packages.
+  If the packages are listed, you have successfully installed the Littlebot packages.
 
   Congratulations! You have now installed the **littlebot_gazebo** package and are ready to explore and simulate your Littlebot robot in the Gazebo environment.
 
