@@ -67,7 +67,7 @@ To install the Littlebot Gazebo package, follow these steps:
 
   ```bash
   # Source the workspace (you might want to add this line to your .bashrc or .bash_profile)
-  source ~/littlebot_ws/install/setap.bash
+  source ~/littlebot_ws/install/setup.bash
   ```
 
 ### 5. Verify the Installation:
