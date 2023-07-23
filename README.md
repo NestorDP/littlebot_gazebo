@@ -25,6 +25,32 @@ Please follow the installation and usage instructions provided below to get star
 
 ## Instalation
 
+
+To install the Littlebot Gazebo package, follow these steps:
+
+### Create a ROS Workspace:
+  Before you begin, make sure you have ROS installed on your system. If you don't have it, you can follow the official [ROS installation guide](https://docs.ros.org/en/humble/Installation.html) for your operating system. Once ROS is installed, create a new ROS workspace if you don't have one already. You can create a workspace by running the following commands in your terminal:
+
+  ```bash
+  # Create a new ROS workspace (replace "littlebot_ws" with your preferred workspace name)
+  mkdir -p ~/littlebot_ws/src
+  cd ~/littlebot_ws/
+  colcon build
+  ```
+### Clone the Littlebot Packages:
+  Navigate to the src directory of your ROS workspace, and clone the **littlebot_gazebo** and **littlebo package** repositories from GitHub:
+
+  ```bash
+# Move to the 'src' directory of your ROS workspace
+cd ~/catkin_ws/src/
+
+# Clone the Littlebot Gazebo package repository
+git clone https://github.com/NestorDP/littlebot_gazebo.git
+
+# Clone the Littlebot package repository
+git https://github.com/NestorDP/littlebot.git
+  ```
+
 ## Usage
 
 ## Configurations
