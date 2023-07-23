@@ -51,18 +51,35 @@ To install the Littlebot Gazebo package, follow these steps:
   git clone https://github.com/NestorDP/littlebot.git
   ```
 
-### 3. Build the package
-After cloning the repository, return to the root of your ROS workspace and build the package using **colcon build**:
-```bash
-# Move back to the root of your ROS workspace
-cd ~/littlebot_ws/
+### 3. Build the package:
+  After cloning the repository, return to the root of your ROS workspace and build the package using **colcon build**:
+  ```bash
+  # Move back to the root of your ROS workspace
+  cd ~/littlebot_ws/
 
-# Build the package
-colcon build
-```
+  # Build the package
+  colcon build
+  ```
+  The build process will compile the littlebot_gazebo and littlebot packages and make it ready for use
 
+### 4. Source the Workspace:
+  To ensure ROS can find the littlebot packages, you need to source your workspace. Run the following command:
 
+  ```bash
+  # Source the workspace (you might want to add this line to your .bashrc or .bash_profile)
+  source ~/littlebot_ws/install/setap.bash
+  ```
 
+### 5. Verify the Installation:
+  To verify that the package is correctly installed and accessible, you can try running a sample simulation or check if the package is listed among your ROS packages:
+
+  ```bash
+  # To check if the package is listed in your ROS packages
+  ros2 pkg list | grep littlebot*
+  ```
+  If the package is listed, you have successfully installed the Littlebot packages.
+
+  Congratulations! You have now installed the **littlebot_gazebo** package and are ready to explore and simulate your Littlebot robot in the Gazebo environment.
 
 ## Usage
 
