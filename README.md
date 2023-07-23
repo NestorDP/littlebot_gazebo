@@ -16,14 +16,12 @@ Please follow the installation and usage instructions provided below to get star
 
 
 ## Table of Contents
-
-[Installation](#installation)
-[Usage](#usage)
-[Configuration](#configuration)
-[Contributing](#contributing)
-[License](#license)
-[Credits](#credits)
-[Contact](#contact)
+  - [Instalation](#instalation)
+  - [Usage](#usage)
+  - [Configurations](#configurations)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Credits](#credits)
 
 ## Instalation
 
