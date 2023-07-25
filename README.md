@@ -91,14 +91,4 @@ To install the Littlebot Gazebo package, follow these steps:
 ### GNU General Public License v3.0
 Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.
 
-Permissions                         | Limitations   | Conditions
---------                            | --------      | --------
-:heavy_check_mark: Commercial use   | :x: Liability     | License and copyright notice
-:heavy_check_mark: Modification     | :x: Warranty      | State changes
-:heavy_check_mark: Distribution     |               | Disclose source            
-:heavy_check_mark: Patent use       |               | Same license        
-:heavy_check_mark: Private use
-
-
-
 ## Credits
