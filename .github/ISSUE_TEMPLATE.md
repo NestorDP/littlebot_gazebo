@@ -1,28 +1,26 @@
-## Issue Description
+## Description
+### Problem:
+Provide a clear description of the issue
 
-Please provide a clear and concise description of the issue.
+### Goal:
+The purpose of this issue is to enhance the codebase by including comprehensive exception tests. These tests will ensure that the system properly handles cases where an invalid or missing IP address is provided, and they will verify that all potential problems during the connection establishment are appropriately handled.
 
-### Steps to Reproduce (if applicable)
+### Proposed Changes:
 
-If the issue is a bug, include steps to reproduce the problem:
+1. Add test cases...
+2. Verify that...
+3. Test the system's response...
 
-1. Step 1
-2. Step 2
-3. ...
+### Expected Benefits:
+By adding these exceptions tests, we can achieve the following benefits:
 
-### Expected Behavior
+Improve the robustness and reliability...
+Reduce the likelihood of unexpected failures and errors...
+Enhance the overall stability of the system...
 
-A clear and concise description of what you expected to happen.
 
-### Screenshots (if applicable)
+## Steps to Reproduce
+Set up the testing environment...
 
-If the issue is related to the UI, consider including screenshots to help explain the problem.
-
-### Environment (if applicable)
-
-- OS: [e.g., Windows 10, macOS Big Sur]
-- Browser: [e.g., Chrome, Firefox]
-
-### Additional Context
-
-Add any other context about the issue here.
+## Additional Notes
+Any additional information or context relevant to the issue can be added here.
