@@ -1,15 +1,19 @@
-from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchDescription, RegisterEventHandler
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+from launch.actions import DeclareLaunchArgument
+from launch.actions import ExecuteProcess
+from launch.actions import RegisterEventHandler
+from launch.substitutions import Command
+from launch.substitutions import FindExecutable
+from launch.substitutions import LaunchConfiguration
+from launch.substitutions import PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.event_handlers import OnProcessExit
 
 ARGUMENTS = [
-    DeclareLaunchArgument('world_path', default_value='',
-                          description='The world path, by default is empty.world'),
+    DeclareLaunchArgument('world_path',
+                          default_value='',
+                          description='World path, by default is empty.world'),
 ]
 
 
@@ -27,7 +31,9 @@ def generate_launch_description():
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare("littlebot_description"), "urdf", "littlebot_description.urdf.xacro"]
+                [FindPackageShare("littlebot_description"),
+                 "urdf",
+                 "littlebot_description.urdf.xacro"]
             ),
             " ",
             "name:=littlebot",
@@ -46,7 +52,9 @@ def generate_launch_description():
     spawn_littlebot_velocity_controller = Node(
         package='controller_manager',
         executable='spawner.py',
-        arguments=['littlebot_velocity_controller', '-c', '/controller_manager'],
+        arguments=['littlebot_velocity_controller',
+                   '-c',
+                   '/controller_manager'],
         output='screen',
     )
 
@@ -64,7 +72,8 @@ def generate_launch_description():
         output='screen',
     )
 
-    # Make sure spawn_littlebot_velocity_controller starts after spawn_joint_state_broadcaster
+    # Make sure spawn_littlebot_velocity_controller
+    # starts after spawn_joint_state_broadcaster
     diffdrive_controller_spawn_callback = RegisterEventHandler(
         event_handler=OnProcessExit(
             target_action=spawn_joint_state_broadcaster,
@@ -89,7 +98,7 @@ def generate_launch_description():
     )
 
     spawn_robot = Node(
-        package='gazebo_ros', 
+        package='gazebo_ros',
         executable='spawn_entity.py',
         name='spawn_littlebot',
         arguments=['-entity', 'littlebot', '-topic', 'robot_description'],
