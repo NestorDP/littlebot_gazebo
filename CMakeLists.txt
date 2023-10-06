@@ -3,7 +3,18 @@ project(littlebot_gazebo)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch
+# Gazebo IGN_GAZEBO_RESOURCE_PATH variable configuration
+configure_file(
+  "hooks/hook.dsv.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/hooks/hook.dsv" @ONLY
+)
+
+install(DIRECTORY 
+  launch
+  urdf
+  worlds
+  models
+  ${CMAKE_CURRENT_BINARY_DIR}/hooks
   DESTINATION share/${PROJECT_NAME}
 )
 
