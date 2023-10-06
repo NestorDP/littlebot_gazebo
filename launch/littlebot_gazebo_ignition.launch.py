@@ -13,16 +13,16 @@ def generate_launch_description():
     # Launch Arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default=True)
 
-    littlebot_gazebo = os.path.join(
+    littlebot_gazebo_path = os.path.join(
         get_package_share_directory('littlebot_gazebo'))
 
-    ros_gz_sim = os.path.join(
+    ros_gz_sim_path = os.path.join(
         get_package_share_directory('ros_gz_sim'))
 
     # World file name
-    world_file = os.path.join(littlebot_gazebo, 'worlds', 'floor.sdf')
+    world_file = os.path.join(littlebot_gazebo_path, 'worlds', 'floor.sdf')
 
-    xacro_file = os.path.join(littlebot_gazebo,
+    xacro_file = os.path.join(littlebot_gazebo_path,
                               'urdf',
                               'littlebot.urdf.xacro')
 
@@ -58,7 +58,7 @@ def generate_launch_description():
         # Launch gazebo environment
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')),
+                os.path.join(ros_gz_sim_path, 'launch', 'gz_sim.launch.py')),
             launch_arguments={'gz_args': '-r {}'.format(world_file)}.items(),
         ),
         bridge,
