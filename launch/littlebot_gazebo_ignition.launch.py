@@ -15,6 +15,9 @@ def generate_launch_description():
 
     littlebot_gazebo_path = os.path.join(
         get_package_share_directory('littlebot_gazebo'))
+    
+    littlebot_description_path = os.path.join(
+        get_package_share_directory('littlebot_description'))
 
     ros_gz_sim_path = os.path.join(
         get_package_share_directory('ros_gz_sim'))
@@ -22,9 +25,9 @@ def generate_launch_description():
     # World file name
     world_file = os.path.join(littlebot_gazebo_path, 'worlds', 'floor.sdf')
 
-    xacro_file = os.path.join(littlebot_gazebo_path,
+    xacro_file = os.path.join(littlebot_description_path,
                               'urdf',
-                              'littlebot.urdf.xacro')
+                              'littlebot_description.urdf.xacro')
 
     doc = xacro.parse(open(xacro_file))
     xacro.process_doc(doc)
@@ -40,7 +43,7 @@ def generate_launch_description():
                    '-name', 'littlebot',
                    '-x', '0.0',
                    '-y', '0.0',
-                   '-z', '0.0',
+                   '-z', '1.0',
                    '-R', '0.0',
                    '-P', '0.0',
                    '-Y', '0.0',
@@ -50,7 +53,10 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
+        arguments=[
+            '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+            '/model/littlebot/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist'
+        ],
         output='screen'
     )
 
