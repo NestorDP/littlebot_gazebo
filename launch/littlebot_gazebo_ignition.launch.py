@@ -62,7 +62,6 @@ def generate_launch_description():
         executable='parameter_bridge',
         arguments=[
             '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
-            '/model/littlebot/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist'
         ],
         output='screen'
     )
