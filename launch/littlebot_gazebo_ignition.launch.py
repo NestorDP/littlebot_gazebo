@@ -15,7 +15,7 @@ def generate_launch_description():
 
     littlebot_gazebo_path = os.path.join(
         get_package_share_directory('littlebot_gazebo'))
-    
+
     littlebot_description_path = os.path.join(
         get_package_share_directory('littlebot_description'))
 
