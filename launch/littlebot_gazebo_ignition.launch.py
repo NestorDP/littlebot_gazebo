@@ -19,6 +19,9 @@ def generate_launch_description():
     littlebot_description_path = os.path.join(
         get_package_share_directory('littlebot_description'))
 
+    littlebot_description_path = os.path.join(
+        get_package_share_directory('littlebot_description'))
+
     ros_gz_sim_path = os.path.join(
         get_package_share_directory('ros_gz_sim'))
 
@@ -33,7 +36,14 @@ def generate_launch_description():
     xacro.process_doc(doc)
     params = {'robot_description': doc.toxml()}
 
-    print(params)
+    # print(params)
+
+    node_robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[params],
+    )
 
     ignition_spawn_entity = Node(
         package='ros_gz_sim',
@@ -43,7 +53,7 @@ def generate_launch_description():
                    '-name', 'littlebot',
                    '-x', '0.0',
                    '-y', '0.0',
-                   '-z', '0.0',
+                   '-z', '1.0',
                    '-R', '0.0',
                    '-P', '0.0',
                    '-Y', '0.0',
@@ -53,7 +63,9 @@ def generate_launch_description():
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock'],
+        arguments=[
+            '/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock',
+        ],
         output='screen'
     )
 
@@ -64,6 +76,7 @@ def generate_launch_description():
                 os.path.join(ros_gz_sim_path, 'launch', 'gz_sim.launch.py')),
             launch_arguments={'gz_args': '-r {}'.format(world_file)}.items(),
         ),
+        node_robot_state_publisher,
         bridge,
         ignition_spawn_entity,
         # Launch Arguments

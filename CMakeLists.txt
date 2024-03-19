@@ -11,7 +11,6 @@ configure_file(
 
 install(DIRECTORY 
   launch
-  urdf
   worlds
   models
   ${CMAKE_CURRENT_BINARY_DIR}/hooks
